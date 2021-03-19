@@ -10,11 +10,13 @@ import java.util.Iterator;
 import java.util.Set;
 
 public class Main {
+
+    public static Config config = new Config();
+    public static String configLoc = "";
+
     public static void main(String... args){
-        try {
-            SubroutineManager.registerAllSubroutines();
-        } catch (NoSuchMethodException | ClassNotFoundException | IllegalAccessException | InvocationTargetException | InstantiationException e) {
-            e.printStackTrace();
-        }
+        configLoc = args[0];
+        SubroutineManager.registerAllSubroutines();
+
     }
 }
